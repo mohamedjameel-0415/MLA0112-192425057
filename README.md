@@ -1,6 +1,12 @@
-1. Minimax Algorithm
-Objective: Determine optimal move in game tree using recursive evaluation
+# MLA0201
+.. 
 
+
+## 1. Minimax Algorithm
+
+**Objective:** Determine optimal move in game tree using recursive evaluation
+
+```
 ALGORITHM MINIMAX(node, depth, maximizingPlayer)
     IF depth = MAX_DEPTH OR node is terminal THEN
         RETURN heuristic_value(node)
@@ -22,9 +28,15 @@ ALGORITHM MINIMAX(node, depth, maximizingPlayer)
         RETURN minEval
     END IF
 END ALGORITHM
-2. Tic Tac Toe Game
-Objective: Implement complete game flow with win condition detection
+```
 
+---
+
+## 2. Tic Tac Toe Game
+
+**Objective:** Implement complete game flow with win condition detection
+
+```
 ALGORITHM TicTacToe()
     board ← Initialize 3×3 empty grid
     currentPlayer ← "X"
@@ -54,9 +66,15 @@ ALGORITHM TicTacToe()
     
     RETURN game result
 END ALGORITHM
-3. Eight Queens Problem
-Objective: Place 8 queens on chessboard using backtracking without mutual attack
+```
 
+---
+
+## 3. Eight Queens Problem
+
+**Objective:** Place 8 queens on chessboard using backtracking without mutual attack
+
+```
 ALGORITHM SolveEightQueens()
     board ← Initialize 8×8 empty grid
     solutions ← empty list
@@ -85,9 +103,15 @@ ALGORITHM SolveEightQueens()
     PlaceQueens(0)
     RETURN solutions
 END ALGORITHM
-4. Alpha-Beta Pruning
-Objective: Optimize minimax by eliminating non-promising branches
+```
 
+---
+
+## 4. Alpha-Beta Pruning
+
+**Objective:** Optimize minimax by eliminating non-promising branches
+
+```
 ALGORITHM AlphaBetaPruning(node, depth, alpha, beta, maximizingPlayer)
     IF depth = 0 OR node is terminal THEN
         RETURN evaluate(node)
@@ -117,9 +141,15 @@ ALGORITHM AlphaBetaPruning(node, depth, alpha, beta, maximizingPlayer)
         RETURN minEval
     END IF
 END ALGORITHM
-5. Map Coloring Problem
-Objective: Color regions with minimum colors ensuring no adjacent regions share same color
+```
 
+---
+
+## 5. Map Coloring Problem
+
+**Objective:** Color regions with minimum colors ensuring no adjacent regions share same color
+
+```
 ALGORITHM MapColoring(graph, numColors)
     colors ← empty array of size graph.numRegions
     colorSet ← {1, 2, ..., numColors}
@@ -150,9 +180,15 @@ ALGORITHM MapColoring(graph, numColors)
         RETURN "No solution with " + numColors + " colors"
     END IF
 END ALGORITHM
-6. Missionaries and Cannibals Problem
-Objective: Transport all missionaries and cannibals across river safely using BFS
+```
 
+---
+
+## 6. Missionaries and Cannibals Problem
+
+**Objective:** Transport all missionaries and cannibals across river safely using BFS
+
+```
 ALGORITHM MissionariesAndCannibals()
     initialState ← (3, 3, 1)  // (missionaries, cannibals, boat position)
     goalState ← (0, 0, 0)
@@ -179,9 +215,15 @@ ALGORITHM MissionariesAndCannibals()
     
     RETURN "No solution found"
 END ALGORITHM
-7. Cryptarithmetic
-Objective: Find digit assignments to letters satisfying arithmetic equation
+```
 
+---
+
+## 7. Cryptarithmetic
+
+**Objective:** Find digit assignments to letters satisfying arithmetic equation
+
+```
 ALGORITHM CryptarithmeticSolver(equation)
     letters ← ExtractUniqueLetters(equation)
     leadingLetters ← ExtractLeadingLetters(equation)
@@ -209,9 +251,15 @@ ALGORITHM CryptarithmeticSolver(equation)
     
     RETURN "No solution exists"
 END ALGORITHM
-8. Breadth-First Search (BFS)
-Objective: Explore graph level-by-level to find shortest path to goal
+```
 
+---
+
+## 8. Breadth-First Search (BFS)
+
+**Objective:** Explore graph level-by-level to find shortest path to goal
+
+```
 ALGORITHM BreadthFirstSearch(graph, startNode, goalNode)
     IF startNode = goalNode THEN
         RETURN [startNode]
@@ -240,9 +288,15 @@ ALGORITHM BreadthFirstSearch(graph, startNode, goalNode)
     
     RETURN "Goal not reachable"
 END ALGORITHM
-9. Depth-First Search (DFS)
-Objective: Explore graph by recursively visiting nodes to maximum depth
+```
 
+---
+
+## 9. Depth-First Search (DFS)
+
+**Objective:** Explore graph by recursively visiting nodes to maximum depth
+
+```
 ALGORITHM DepthFirstSearch(graph, startNode, goalNode)
     visited ← empty set
     path ← empty list
@@ -271,9 +325,15 @@ ALGORITHM DepthFirstSearch(graph, startNode, goalNode)
     result ← DFS(startNode, goalNode, path)
     RETURN result IF result ≠ NULL ELSE "Goal not found"
 END ALGORITHM
-10. Uniform Cost Search (UCS)
-Objective: Find lowest-cost path using priority queue ordered by path cost
+```
 
+---
+
+## 10. Uniform Cost Search (UCS)
+
+**Objective:** Find lowest-cost path using priority queue ordered by path cost
+
+```
 ALGORITHM UniformCostSearch(graph, startNode, goalNode)
     priorityQueue ← PriorityQueue()
     priorityQueue.insert(startNode, cost=0)
@@ -307,9 +367,15 @@ ALGORITHM UniformCostSearch(graph, startNode, goalNode)
     
     RETURN "Goal not reachable"
 END ALGORITHM
-11. A* Search Algorithm
-Objective: Find optimal path using heuristic-guided evaluation (g + h)
+```
 
+---
+
+## 11. A* Search Algorithm
+
+**Objective:** Find optimal path using heuristic-guided evaluation (g + h)
+
+```
 ALGORITHM AStarSearch(graph, startNode, goalNode, heuristic)
     openSet ← PriorityQueue()
     closedSet ← empty set
@@ -349,9 +415,15 @@ ALGORITHM AStarSearch(graph, startNode, goalNode, heuristic)
     
     RETURN "Goal not found"
 END ALGORITHM
-12. Greedy Best-First Search (GBFS)
-Objective: Find path by selecting node with lowest heuristic value
+```
 
+---
+
+## 12. Greedy Best-First Search (GBFS)
+
+**Objective:** Find path by selecting node with lowest heuristic value
+
+```
 ALGORITHM GreedyBestFirstSearch(graph, startNode, goalNode, heuristic)
     priorityQueue ← PriorityQueue()
     visited ← empty set
@@ -383,9 +455,15 @@ ALGORITHM GreedyBestFirstSearch(graph, startNode, goalNode, heuristic)
     
     RETURN "Goal not found"
 END ALGORITHM
-13. Hill Climbing Algorithm
-Objective: Find local optimum by iteratively moving to best neighboring state
+```
 
+---
+
+## 13. Hill Climbing Algorithm
+
+**Objective:** Find local optimum by iteratively moving to best neighboring state
+
+```
 ALGORITHM HillClimbing(initialState, objectiveFunction)
     currentState ← initialState
     currentValue ← objectiveFunction(currentState)
@@ -413,9 +491,15 @@ ALGORITHM HillClimbing(initialState, objectiveFunction)
     
     RETURN currentState
 END ALGORITHM
-14. Fuzzy Set Operations
-Objective: Perform union, intersection, and complement on fuzzy sets
+```
 
+---
+
+## 14. Fuzzy Set Operations
+
+**Objective:** Perform union, intersection, and complement on fuzzy sets
+
+```
 ALGORITHM FuzzySetOperations(fuzzySetA, fuzzySetB)
     unionSet ← empty dictionary
     intersectionSet ← empty dictionary
@@ -441,9 +525,15 @@ ALGORITHM FuzzySetOperations(fuzzySetA, fuzzySetB)
     
     RETURN (unionSet, intersectionSet, complementSetA)
 END ALGORITHM
-15. Decision Tree Classification
-Objective: Classify data based on nested conditional logic derived from features
+```
 
+---
+
+## 15. Decision Tree Classification
+
+**Objective:** Classify data based on nested conditional logic derived from features
+
+```
 ALGORITHM DecisionTreeClassification(inputFeatures)
     weather ← inputFeatures.weather
     temperature ← inputFeatures.temperature
@@ -479,3 +569,4 @@ ALGORITHM DecisionTreeClassification(inputFeatures)
         RETURN "Unknown condition"
     END IF
 END ALGORITHM
+```
